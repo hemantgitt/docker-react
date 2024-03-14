@@ -1,0 +1,14 @@
+sudo: required
+
+services:
+  - docker
+
+ // it is a series of command that run before our test run
+
+before_install: 
+  - docker build -t hemantgitt/docker-react -f Dockerfile.dev .
+
+  script:
+   - docker run -r CI=true hemantgitt/docker-react npm run test
+
+
