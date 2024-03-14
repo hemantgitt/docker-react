@@ -6,9 +6,9 @@ services:
  // it is a series of command that run before our test run
 
 before_install: 
-  - docker build -t hemantgitt/docker-react -f Dockerfile.dev .
+  - docker build -t frontend-web/docker-react -f Dockerfile.dev .
 
   script:
-   - docker run -r CI=true hemantgitt/docker-react npm run test 
+   - docker run -r CI=true frontend-web/docker-react npm run test 
 
 
